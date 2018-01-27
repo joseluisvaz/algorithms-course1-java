@@ -1,22 +1,21 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Change {
   private static int getChange(int m) {
 
-    int[] denominations = {10, 5, 1};
-    int c = 0;  // Index of denomination
+    LinkedList<Integer> coinDenoms =
+        new LinkedList<>(Arrays.asList(10, 5, 1));
     int numberOfCoins = 0;
 
     while (m > 0) {
-      if (m >= denominations[c]) {
-        m = m - denominations[c];
+      if (m >= coinDenoms.getFirst()) {
+        m = m - coinDenoms.getFirst();
         numberOfCoins = numberOfCoins + 1;
       }
-      else {
-        c = c + 1;
-      }
-
+      else
+        coinDenoms.pop();
     }
+
     return numberOfCoins;
   }
 
