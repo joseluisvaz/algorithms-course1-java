@@ -1,15 +1,15 @@
 import java.util.*;
 
 public class Change {
-  private static int getChange(int m) {
+  private static int getChange(int amount) {
 
     LinkedList<Integer> coinDenoms =
         new LinkedList<>(Arrays.asList(10, 5, 1));
     int numberOfCoins = 0;
 
-    while (m > 0) {
-      if (m >= coinDenoms.getFirst()) {
-        m = m - coinDenoms.getFirst();
+    while (amount > 0) {
+      if (amount >= coinDenoms.getFirst()) {
+        amount = amount - coinDenoms.getFirst();
         numberOfCoins = numberOfCoins + 1;
       }
       else
