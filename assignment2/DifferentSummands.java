@@ -5,18 +5,20 @@ public class DifferentSummands {
 
     List<Integer> summands = new ArrayList<>();
 
-    return optimalSummandsInner(n-1, 1, summands);
-  }
+    int k = n;
 
-  private static List<Integer> optimalSummandsInner(int n, int l, List<Integer> acc) {
+    for (int l = 1; l < n; l++) {
+      if(k <= 2*l) {
+        summands.add(k);
+        break;
+      }
 
-    if ( n < (2*l) ) {
-      acc.add(n);
-      return acc;
+      summands.add(l);
+      k -= l;
     }
-    acc.add(l);
-    return optimalSummandsInner(n-1, l+1, acc);
+    return summands;
   }
+
 
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
