@@ -5,17 +5,11 @@ public class DotProduct {
     // n² implementation
     long result = 0;
 
+    Arrays.sort(a);
+    Arrays.sort(b);
+
     for (int i = 0; i < a.length; i++) {
-      long currentMaxProd = a[i] * b[0];
-
-      for (int j = 0; j < b.length; j++) {
-        long prod = i * j;
-        if (prod > currentMaxProd) {
-          currentMaxProd = prod;
-        }
-      }
-
-      result += currentMaxProd;
+      result += ((long) a[i]) * b[i];
     }
     return result;
   }
