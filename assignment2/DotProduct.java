@@ -6,7 +6,7 @@ public class DotProduct {
     long result = 0;
 
     for (int i = 0; i < a.length; i++) {
-      long currentMaxProd = a[i] + b[0];
+      long currentMaxProd = a[i] * b[0];
 
       for (int j = 0; j < b.length; j++) {
         long prod = i * j;
@@ -14,7 +14,7 @@ public class DotProduct {
           currentMaxProd = prod;
         }
       }
-      
+
       result += currentMaxProd;
     }
     return result;
